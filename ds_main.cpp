@@ -17,7 +17,8 @@ using namespace std;
 //#define TWO_D_ARRAY
 //#define MATRIX_ARRAY
 //#define LINKED_LIST
-#define STACK_ARRAY
+//#define STACK_ARRAY
+#define STACK_LINKED_LIST
 
 #define ASCENDING	1
 
@@ -75,6 +76,10 @@ int main()
 
 #ifdef STACK_ARRAY
 		vLearnStackArray();
+#endif
+
+#ifdef STACK_LINKED_LIST
+		vLearnStackLL();
 #endif
 	return 0;
 }
@@ -167,7 +172,7 @@ void vLearnExchangeSelectionSort()
 	cout << "This is excahnge selection sort\n";
 	int size = 13, i = 0;
 	int arr[size] = {1000,15,6,13,22,3,52,2,-1,-15,33,53,-61};
-	int sort_index = 0;
+	//int sort_index = 0;
 
 	for(i=0; i<size; i++){
 		printf("%d ", arr[i]);
@@ -463,4 +468,10 @@ void vLearnStackArray(){
 	printStackArray(Stack, &top);
 	popStackArray(Stack, &top);
 	printStackArray(Stack, &top);
+}
+
+// This is the linked List implementation of the Stack DS
+void vLearnStackLL()
+{
+	printf("LL\n");
 }

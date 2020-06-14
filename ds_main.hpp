@@ -23,6 +23,7 @@ void vLearn2DArray();
 void vLearnMatrix();
 void vLearnLinkedList();
 void vLearnStackArray();
+void vLearnStackLL();
 
 /*enum
 {
