@@ -435,8 +435,15 @@ void pushStackLL(node **TOP, int value){
 }
 
 int popStackLL(node **TOP){
+	if(*TOP == NULL){
+		printf("Stack is empty: UNDERFLOW!\n");
+		return -1;
+	}
 	int value = 0;
-
+	node *temp = *TOP;
+	value = temp->value;
+	*TOP = temp->next;
+	free(temp);
 	return value;
 }
 
@@ -452,6 +459,7 @@ void printStackLL(node **TOP){
 		printf("%d\n", temp->value);
 		temp = temp->next;
 	}
+	printf("\n");
 }
 
 // ===================================================//

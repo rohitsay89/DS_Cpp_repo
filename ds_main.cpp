@@ -474,12 +474,22 @@ void vLearnStackArray(){
 void vLearnStackLL(){
 	printf("This is stack implementation using Linked List\n");
 	node *TOP = NULL;
+	int i = 0;
 	printStackLL(&TOP);
-	pushStackLL(&TOP, 55);
-	pushStackLL(&TOP, 56);
-	pushStackLL(&TOP, 57);
-	pushStackLL(&TOP, 58);
-	pushStackLL(&TOP, 59);
+	for(i = 1; i<7; i++){
+		pushStackLL(&TOP, i+5);
+	}
 	printStackLL(&TOP);
-	//popStackLL(TOP);
+	popStackLL(&TOP);
+	printStackLL(&TOP);
+	popStackLL(&TOP);
+	popStackLL(&TOP);
+	popStackLL(&TOP);
+	popStackLL(&TOP);
+	popStackLL(&TOP);
+	popStackLL(&TOP);
+	popStackLL(&TOP);
+	popStackLL(&TOP);
+	popStackLL(&TOP);
+	printStackLL(&TOP);
 }
