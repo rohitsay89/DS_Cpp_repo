@@ -471,7 +471,15 @@ void vLearnStackArray(){
 }
 
 // This is the linked List implementation of the Stack DS
-void vLearnStackLL()
-{
-	printf("LL\n");
+void vLearnStackLL(){
+	printf("This is stack implementation using Linked List\n");
+	node *TOP = NULL;
+	printStackLL(&TOP);
+	pushStackLL(&TOP, 55);
+	pushStackLL(&TOP, 56);
+	pushStackLL(&TOP, 57);
+	pushStackLL(&TOP, 58);
+	pushStackLL(&TOP, 59);
+	printStackLL(&TOP);
+	//popStackLL(TOP);
 }

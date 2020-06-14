@@ -415,3 +415,43 @@ int ifStackArrayFull(int arr[], int *top){
 }
 
 // ===================================================//
+
+// ================ Stack Linked List =============== //
+
+void pushStackLL(node **TOP, int value){
+	node *temp = NULL;
+	if(*TOP == NULL){
+		temp = (node*)malloc(sizeof(node));
+		temp->value = value;
+		temp->next = NULL;
+		*TOP = temp;
+		return;
+	}
+	temp = *TOP;
+	node *newNode = (node*)malloc(sizeof(node));
+	newNode->value = value;
+	newNode->next = temp;
+	*TOP = newNode;
+}
+
+int popStackLL(node **TOP){
+	int value = 0;
+
+	return value;
+}
+
+void printStackLL(node **TOP){
+	if(*TOP == NULL){
+		printf("Stack is empty\n");
+		return;
+	}
+	node *temp = *TOP;
+	printf("%d <-- TOP\n", temp->value);
+	temp = temp->next;
+	while(temp != NULL){
+		printf("%d\n", temp->value);
+		temp = temp->next;
+	}
+}
+
+// ===================================================//

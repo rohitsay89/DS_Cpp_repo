@@ -60,6 +60,9 @@ void pushStackArray(int arr[], int *top, int value);
 int popStackArray(int arr[], int *top);
 int ifStackArrayFull(int arr[], int *top);
 int ifStackArrayEmpty(int arr[], int *top);
+void pushStackLL(node **TOP, int value);
+int popStackLL(node **TOP);
+void printStackLL(node **TOP);
 
 
 #endif /* DS_MAIN_HPP_ */
