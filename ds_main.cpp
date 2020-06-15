@@ -19,7 +19,8 @@ using namespace std;
 //#define LINKED_LIST
 //#define STACK_ARRAY
 //#define STACK_LINKED_LIST
-#define QUEUE_ARRAY
+//#define QUEUE_ARRAY
+#define QUEUE_LINKED_LIST
 
 #define ASCENDING	1
 
@@ -85,6 +86,10 @@ int main()
 
 #ifdef QUEUE_ARRAY
 		vLearnQueueArray();
+#endif
+
+#ifdef QUEUE_LINKED_LIST
+		vLearnQueueLL();
 #endif
 	return 0;
 }
@@ -522,4 +527,8 @@ void vLearnQueueArray(){
 	}
 	printQueueArray(qarr, &rear);
 
+}
+
+void vLearnQueueLL(){
+	printf("This is queue implementation using linked list\n");
 }

@@ -26,6 +26,7 @@ void vLearnLinkedList();
 void vLearnStackArray();
 void vLearnStackLL();
 void vLearnQueueArray();
+void vLearnQueueLL();
 
 /*enum
 {
