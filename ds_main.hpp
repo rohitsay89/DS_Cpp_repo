@@ -71,4 +71,8 @@ void insertQueueArray(int qarr[], int *rear, int value);
 int deleteQueueArray(int qarr[], int *rear);
 void printQueueArray(int qarr[], int *rear);
 
+void insertQueueLL(node **FRONT, node **REAR, int value);
+void deleteQueueLL(node **FRONT, node **REAR);
+void printQueueLL(node **FRONT);
+
 #endif /* DS_MAIN_HPP_ */

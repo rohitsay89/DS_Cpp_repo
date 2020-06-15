@@ -531,4 +531,16 @@ void vLearnQueueArray(){
 
 void vLearnQueueLL(){
 	printf("This is queue implementation using linked list\n");
+	node *FRONT, *REAR;
+	FRONT = REAR = NULL;
+
+	deleteQueueLL(&FRONT, &REAR);
+	insertQueueLL(&FRONT, &REAR, 55);
+	insertQueueLL(&FRONT, &REAR, 56);
+	insertQueueLL(&FRONT, &REAR, 57);
+	insertQueueLL(&FRONT, &REAR, 58);
+	insertQueueLL(&FRONT, &REAR, 59);
+	printQueueLL(&FRONT);
+	deleteQueueLL(&FRONT, &REAR);
+	printQueueLL(&FRONT);
 }

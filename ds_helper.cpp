@@ -463,7 +463,7 @@ void printStackLL(node **TOP){
 }
 
 // ===================================================//
-// ================ Stack Linked List =============== //
+// ================ Queue Array ===================== //
 
 void insertQueueArray(int qarr[], int *rear, int value){
 	if(*rear > QUEUE_SIZE-2){
@@ -501,5 +501,53 @@ void printQueueArray(int qarr[], int *rear){
 	}
 	printf("\n");
 }
+
+// ===================================================//
+// ================ Queue Linked List =============== //
+
+void insertQueueLL(node **FRONT, node **REAR, int value){
+	node *newNode = new node;
+	newNode->value = value;
+	newNode->next = NULL;
+	if(*REAR == NULL){
+		*REAR = newNode;
+		*FRONT = newNode;
+		return;
+	}
+	node *temp = *FRONT;
+	while(temp->next!=NULL){
+		temp = temp->next;
+	}
+	temp->next = newNode;
+	*REAR = newNode;
+}
+
+void deleteQueueLL(node **FRONT, node **REAR){
+	if(*FRONT == NULL){
+		printf("Queue is empty, nothing to delete\n");
+		return;
+	}
+	node *temp = *FRONT;
+	*FRONT = temp->next;
+	if(temp->next == NULL){
+		*REAR = NULL;
+	}
+	delete temp;
+}
+
+void printQueueLL(node **FRONT){
+	node *temp = *FRONT;
+	printf("\n");
+	while(temp!=NULL){
+		printf("%d ", temp->value);
+		temp = temp->next;
+	}
+	printf("\n");
+}
+
+// ===================================================//
+// ================ Ring buuffer FIFO =============== //
+
+
 
 // ===================================================//
