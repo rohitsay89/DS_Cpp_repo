@@ -463,3 +463,43 @@ void printStackLL(node **TOP){
 }
 
 // ===================================================//
+// ================ Stack Linked List =============== //
+
+void insertQueueArray(int qarr[], int *rear, int value){
+	if(*rear > QUEUE_SIZE-2){
+		printf("Queue Overflow: Queue full not able to add\n");
+		return;
+	}
+	(*rear)++;
+	qarr[*rear] = value;
+}
+
+int deleteQueueArray(int qarr[], int *rear){
+	if(*rear < 0){
+		printf("Queue Underflow: queue is empty");
+		return -1;
+	}
+	int value = qarr[0];
+	//shift remaing elements till end of array
+	int i = 0;
+	for(i=0; i<*rear; i++){
+		qarr[i] = qarr[i+1];
+	}
+	(*rear)--;
+	return value;
+}
+
+void printQueueArray(int qarr[], int *rear){
+	if(*rear < 0){
+		printf("Queue is empty\n");
+		return;
+	}
+	int i = 0;
+	printf("\n");
+	for(i=0;i<=*rear;i++){
+		printf("%d ", qarr[i]);
+	}
+	printf("\n");
+}
+
+// ===================================================//

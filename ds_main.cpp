@@ -18,7 +18,8 @@ using namespace std;
 //#define MATRIX_ARRAY
 //#define LINKED_LIST
 //#define STACK_ARRAY
-#define STACK_LINKED_LIST
+//#define STACK_LINKED_LIST
+#define QUEUE_ARRAY
 
 #define ASCENDING	1
 
@@ -80,6 +81,10 @@ int main()
 
 #ifdef STACK_LINKED_LIST
 		vLearnStackLL();
+#endif
+
+#ifdef QUEUE_ARRAY
+		vLearnQueueArray();
 #endif
 	return 0;
 }
@@ -492,4 +497,29 @@ void vLearnStackLL(){
 	popStackLL(&TOP);
 	popStackLL(&TOP);
 	printStackLL(&TOP);
+}
+
+// In this implementation I am treating front of queue at 0 index.
+void vLearnQueueArray(){
+	printf("This is a queue implementation using array\n");
+	int qarr[QUEUE_SIZE];
+	memset(qarr, 0x00, QUEUE_SIZE*sizeof(int));
+	int rear = -1;
+	deleteQueueArray(qarr, &rear);
+	insertQueueArray(qarr, &rear, 55);
+	insertQueueArray(qarr, &rear, 56);
+	insertQueueArray(qarr, &rear, 57);
+	insertQueueArray(qarr, &rear, 58);
+	printQueueArray(qarr, &rear);
+	for(int i = 0; i<25; i++){
+		insertQueueArray(qarr, &rear, i+5);
+		printQueueArray(qarr, &rear);
+	}
+	printQueueArray(qarr, &rear);
+	for(int i = 0; i<20; i++){
+		deleteQueueArray(qarr, &rear);
+		printQueueArray(qarr, &rear);
+	}
+	printQueueArray(qarr, &rear);
+
 }
