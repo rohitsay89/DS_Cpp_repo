@@ -556,7 +556,7 @@ void vLearnCircularQueue(){
 	int front, rear;
 	front = rear = -1;
 
-	printCQueue(CQueue, &front, &rear);
+
 	/*for(int i = 1;i<7;i++){
 		insertCQueue(CQueue, &front, &rear, i);
 	}
@@ -564,6 +564,8 @@ void vLearnCircularQueue(){
 	for(int i = 1;i<7;i++){
 		printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
 	}*/
+	printCQueue(CQueue, &front, &rear);
+	printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
 	insertCQueue(CQueue, &front, &rear, 55);
 	insertCQueue(CQueue, &front, &rear, 56);
 	insertCQueue(CQueue, &front, &rear, 57);
