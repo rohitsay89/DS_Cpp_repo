@@ -9,7 +9,7 @@
 #define DS_MAIN_HPP_
 
 #define STACK_ARRAY_SIZE	10
-#define QUEUE_SIZE			20
+#define QUEUE_SIZE			10
 
 void vLearnLinearSearchArray();
 void vLearnBinarySearchArray();
@@ -27,6 +27,7 @@ void vLearnStackArray();
 void vLearnStackLL();
 void vLearnQueueArray();
 void vLearnQueueLL();
+void vLearnCircularQueue();
 
 /*enum
 {
@@ -75,4 +76,7 @@ void insertQueueLL(node **FRONT, node **REAR, int value);
 void deleteQueueLL(node **FRONT, node **REAR);
 void printQueueLL(node **FRONT);
 
+void insertCQueue(int arr[], int *front, int *rear, int value);
+int deleteCQueue(int arr[], int *front, int *rear);
+void printCQueue(int arr[], int *front, int *rear);
 #endif /* DS_MAIN_HPP_ */

@@ -548,6 +548,75 @@ void printQueueLL(node **FRONT){
 // ===================================================//
 // ================ Ring buuffer FIFO =============== //
 
+void insertCQueue(int arr[], int *front, int *rear, int value){
+	//printf("Front = %d, Rear = %d, Inserting %d,", *front, *rear, value);
+	if(*rear == -1)// first element in the queue
+	{
+		*front = *rear = 0;
+		arr[0] = value;
+		return;
+	}
+	int localRear = *rear;
+	localRear++;
+	localRear = localRear % QUEUE_SIZE;
 
+	//printf(" localRear = %d\n", localRear);
+	if(localRear == *front)
+	{
+		printf("Queue is full\n");
+		return;
+	}
+	(*rear)++;
+	(*rear) = (*rear) % QUEUE_SIZE;
+	arr[*rear] = value;
+
+	/*if((*front == 0 && *rear == QUEUE_SIZE-1)||
+				(*rear == (*front-1)%(QUEUE_SIZE-1)))
+	{
+		printf("Queue is full\n");
+		*rear = (*front) - 1;
+		return;
+	}
+	if(*front == -1){
+		*front = *rear = 0;
+		arr[*rear] = value;
+		return;
+	}
+
+	if(*rear == QUEUE_SIZE-1 && *front != 0)
+	{
+		*rear = 0;
+		arr[*rear] = value;
+		return;
+	}
+	(*rear)++;
+	arr[*rear] = value;*/
+}
+
+int deleteCQueue(int arr[], int *front, int *rear){
+	int value = 0;
+
+
+	return value;
+}
+
+void printCQueue(int arr[], int *front, int *rear){
+	if(*rear == -1||*front == -1)
+	{
+		printf("Queue is empty\n");
+		return;
+	}
+	int i=*front;
+	*rear = *rear % QUEUE_SIZE;
+	//printf("Front = %d, Rear = %d\n", *front, *rear);
+	//for(i=*front;i<=*rear;i++){
+	while(i != *rear){
+		i = i % QUEUE_SIZE;
+		printf("%d \n", arr[i]);
+		i++;
+	}
+	printf("%d \n", arr[i]);
+	printf("\n");
+}
 
 // ===================================================//

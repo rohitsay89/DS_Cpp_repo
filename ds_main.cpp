@@ -20,7 +20,8 @@ using namespace std;
 //#define STACK_ARRAY
 //#define STACK_LINKED_LIST
 //#define QUEUE_ARRAY
-#define QUEUE_LINKED_LIST
+//#define QUEUE_LINKED_LIST
+#define CIRCULAR_QUEUE_ARRAY
 
 #define ASCENDING	1
 
@@ -90,6 +91,10 @@ int main()
 
 #ifdef QUEUE_LINKED_LIST
 		vLearnQueueLL();
+#endif
+
+#ifdef CIRCULAR_QUEUE_ARRAY
+		vLearnCircularQueue();
 #endif
 	return 0;
 }
@@ -543,4 +548,19 @@ void vLearnQueueLL(){
 	printQueueLL(&FRONT);
 	deleteQueueLL(&FRONT, &REAR);
 	printQueueLL(&FRONT);
+}
+
+void vLearnCircularQueue(){
+	printf("This is circular queue implementation using array\n");
+	int CQueue[QUEUE_SIZE];
+	int front, rear;
+	front = rear = -1;
+
+	printCQueue(CQueue, &front, &rear);
+	for(int i = 1;i<20;i++){
+		insertCQueue(CQueue, &front, &rear, i);
+	}
+	printCQueue(CQueue, &front, &rear);
+
+
 }
