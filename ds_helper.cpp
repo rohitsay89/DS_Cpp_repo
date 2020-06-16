@@ -9,8 +9,7 @@
 #include "ds_main.hpp"
 using namespace std;
 
-int Lsearch(int arr[], int size, int item)
-{
+int Lsearch(int arr[], int size, int item){
 	int pos = -1;
 	int i = 0;
 
@@ -81,8 +80,7 @@ int BsearchAscending(int arr[], int size, int item){
 	return pos;
 }
 
-int InsertionSortedAscending(int arr[], int size, int item, int N)
-{
+int InsertionSortedAscending(int arr[], int size, int item, int N){
 	int pos = -1;
 	int i = 0;
 	if(N >= size){
@@ -104,8 +102,7 @@ int InsertionSortedAscending(int arr[], int size, int item, int N)
 	return pos;
 }
 
-int DeletionSortedAscending(int arr[], int size, int item)
-{
+int DeletionSortedAscending(int arr[], int size, int item){
 	//1. find the element and its position it the array
 	// using binary search
 	int pos = -1, i = 0;
@@ -121,8 +118,7 @@ int DeletionSortedAscending(int arr[], int size, int item)
 	return pos;
 }
 
-int delete_item(int arr[], int size, int item)
-{
+int delete_item(int arr[], int size, int item){
 	// linear search the item in the array
 	int pos = -1;
 	int i = 0;
@@ -132,11 +128,9 @@ int delete_item(int arr[], int size, int item)
 			break;
 		}
 	}
-
 	if(pos == -1){	//element not found
 		return -1;
 	}
-
 	// now delete that element and shift up the array
 	if(pos != -1){
 		for(i=pos; i<size-1; i++){
@@ -146,15 +140,13 @@ int delete_item(int arr[], int size, int item)
 	return pos;
 }
 
-int SelectionSort(int arr[], int size)
-{
+int SelectionSort(int arr[], int size){
 	int j=0;
 	int sort_index = 0;
 	int small = arr[sort_index];
 	int temp = 0, pos = 0;
 
-	for(sort_index = 0; sort_index<size; sort_index++)
-	{
+	for(sort_index = 0; sort_index<size; sort_index++){
 		small = arr[sort_index];
 		pos = sort_index;
 		for(j=sort_index+1; j < size; j++){
@@ -169,16 +161,12 @@ int SelectionSort(int arr[], int size)
 		arr[pos] = arr[sort_index];
 		arr[sort_index] = temp;
 	}
-
 	return 0;
 }
 
-int insertArray(int arr[], int size, int key, int pos)
-{
+int insertArray(int arr[], int size, int key, int pos){
 	int i =0;
-
-	for(i = size-1; i>pos; i--)
-	{
+	for(i = size-1; i>pos; i--){
 		arr[i] = arr[i-1];
 	}
 	arr[pos] = key;
@@ -333,7 +321,6 @@ void printList(node *head)
 		return;
 	}
 	node *temp = head;
-	//printf("Head -> ");
 	while(temp!=NULL){
 		printf("%d -> ", temp->value);
 		temp = temp->next;
@@ -368,8 +355,7 @@ void pushStackArray(int arr[], int *top, int value){
 	arr[localTop] = value;
 	*top = localTop;
 #endif
-	if(*top > 9)
-	{
+	if(*top > 9){
 		printf("STACK OVERFLOW\n");
 		return;
 	}
@@ -388,8 +374,7 @@ int popStackArray(int arr[], int *top){
 	*top = localTop;
 	return value;
 #endif
-	if(*top < 0)
-	{
+	if(*top < 0){
 		printf("Stack Underflow\n");
 		return 0;
 	}

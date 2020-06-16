@@ -5,6 +5,7 @@
 #include <string.h>
 
 using namespace std;
+
 //#define ARRAY_LINEAR_SEARCH
 //#define ARRAY_BINARY_SEARCH
 //#define ARRAY_INSERTION
@@ -28,6 +29,8 @@ using namespace std;
 int main()
 {
 	cout << "C++ version = " << __cplusplus << "\nCompilation Date is " << __DATE__ << "\nCompilation Time is " << __TIME__ << endl;
+
+
 
 #ifdef ARRAY_LINEAR_SEARCH
 		vLearnLinearSearchArray();
