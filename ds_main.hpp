@@ -29,6 +29,11 @@ void vLearnQueueArray();
 void vLearnQueueLL();
 void vLearnCircularQueue();
 
+
+// ================================== //
+// unit test module func declerations:
+bool utCircularQueue();
+
 /*enum
 {
 	ARRAY_LINEAR_SEARCH,

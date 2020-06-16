@@ -555,11 +555,9 @@ void vLearnQueueLL(){
 
 void vLearnCircularQueue(){
 	printf("This is circular queue implementation using array\n");
-	int CQueue[QUEUE_SIZE];
-	int front, rear;
-	front = rear = -1;
+	utCircularQueue();
 
-	printCQueue(CQueue, &front, &rear);
+	/*printCQueue(CQueue, &front, &rear);
 	for(int i = 1;i<20;i++){
 		insertCQueue(CQueue, &front, &rear, i);
 	}
@@ -589,4 +587,5 @@ void vLearnCircularQueue(){
 		printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
 	}
 	printCQueue(CQueue, &front, &rear);
+	*/
 }
