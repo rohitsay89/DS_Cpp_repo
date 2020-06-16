@@ -561,8 +561,7 @@ void insertCQueue(int arr[], int *front, int *rear, int value){
 	localRear = localRear % QUEUE_SIZE;
 
 	//printf(" localRear = %d\n", localRear);
-	if(localRear == *front)
-	{
+	if(localRear == *front){
 		printf("Queue is full\n");
 		return;
 	}
@@ -594,13 +593,30 @@ void insertCQueue(int arr[], int *front, int *rear, int value){
 }
 
 int deleteCQueue(int arr[], int *front, int *rear){
+	//printf("Front = %d, Rear = %d\n", *front, *rear);
 	int value = 0;
-
-
+	if(*front == -1)
+	{
+		printf("Queue is empty, ");
+		return -1;
+	}
+	if(*front == *rear)
+	{
+		value = arr[*front];
+		*rear = -1;
+		*front = -1;
+		return value;
+	}
+	int localFront = *front;
+	value = arr[localFront];
+	localFront++;
+	localFront = localFront % QUEUE_SIZE;
+	*front = localFront;
 	return value;
 }
 
 void printCQueue(int arr[], int *front, int *rear){
+	printf("PRINT:\n");
 	if(*rear == -1||*front == -1)
 	{
 		printf("Queue is empty\n");

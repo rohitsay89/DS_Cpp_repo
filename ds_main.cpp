@@ -557,9 +557,31 @@ void vLearnCircularQueue(){
 	front = rear = -1;
 
 	printCQueue(CQueue, &front, &rear);
-	for(int i = 1;i<20;i++){
+	/*for(int i = 1;i<7;i++){
 		insertCQueue(CQueue, &front, &rear, i);
 	}
+	printCQueue(CQueue, &front, &rear);
+	for(int i = 1;i<7;i++){
+		printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
+	}*/
+	insertCQueue(CQueue, &front, &rear, 55);
+	insertCQueue(CQueue, &front, &rear, 56);
+	insertCQueue(CQueue, &front, &rear, 57);
+	insertCQueue(CQueue, &front, &rear, 58);
+	printCQueue(CQueue, &front, &rear);
+	printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
+	printCQueue(CQueue, &front, &rear);
+	printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
+	printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
+	printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
+	printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
+	printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
+	printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
+	printCQueue(CQueue, &front, &rear);
+	insertCQueue(CQueue, &front, &rear, 1);
+	insertCQueue(CQueue, &front, &rear, 2);
+	insertCQueue(CQueue, &front, &rear, 3);
+	insertCQueue(CQueue, &front, &rear, 4);
 	printCQueue(CQueue, &front, &rear);
 
 
