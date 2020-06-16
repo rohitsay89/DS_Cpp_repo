@@ -575,17 +575,15 @@ int deleteCQueue(int arr[], int *front, int *rear){
 		printf("Queue is empty, ");
 		return -1;
 	}
+	value = arr[*front];
 	if(*front == *rear){
-		value = arr[*front];
 		*rear = -1;
 		*front = -1;
 		return value;
 	}
-	int localFront = *front;
-	value = arr[localFront];
-	localFront++;
-	localFront = localFront % QUEUE_SIZE;
-	*front = localFront;
+	value = arr[*front];
+	(*front)++;
+	(*front) = (*front) % QUEUE_SIZE;
 	return value;
 }
 
@@ -594,14 +592,17 @@ void printCQueue(int arr[], int *front, int *rear){
 		printf("PRINT: Queue is empty\n");
 		return;
 	}
-	int i=*front;
-	*rear = *rear % QUEUE_SIZE;
+	int i=(*front)%QUEUE_SIZE;
+	int localRear = *rear;
+	localRear = localRear % QUEUE_SIZE;
 	//printf("Front = %d, Rear = %d\n", *front, *rear);
 	printf("PRINT: \n");
-	while(i != *rear){
-		i = i % QUEUE_SIZE;
+	while(i != localRear){
+		//printf("i = %d, localRear = %d\n", i, localRear);
 		printf("%d \n", arr[i]);
+		i = i % QUEUE_SIZE;
 		i++;
+		i = i % QUEUE_SIZE;
 	}
 	printf("%d \n", arr[i]);
 	printf("\n");

@@ -9,7 +9,7 @@
 #define DS_MAIN_HPP_
 
 #define STACK_ARRAY_SIZE	10
-#define QUEUE_SIZE			10
+#define QUEUE_SIZE			20
 
 void vLearnLinearSearchArray();
 void vLearnBinarySearchArray();
