@@ -30,8 +30,6 @@ int main()
 {
 	cout << "C++ version = " << __cplusplus << "\nCompilation Date is " << __DATE__ << "\nCompilation Time is " << __TIME__ << endl;
 
-
-
 #ifdef ARRAY_LINEAR_SEARCH
 		vLearnLinearSearchArray();
 #endif
