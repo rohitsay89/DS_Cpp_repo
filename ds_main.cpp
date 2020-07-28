@@ -12,12 +12,12 @@ using namespace std;
 //#define ARRAY_DELETION
 //#define EXAMPLE_9_6
 //#define EXCHANGE_SELECTION_SORT
-#define BUBBLE_SORT
+//#define BUBBLE_SORT
 //#define INSERTION_SORT
 //#define MERGE_SORT
 //#define TWO_D_ARRAY
 //#define MATRIX_ARRAY
-//#define LINKED_LIST
+#define LINKED_LIST
 //#define STACK_ARRAY
 //#define STACK_LINKED_LIST
 //#define QUEUE_ARRAY

@@ -176,8 +176,9 @@ int insertArray(int arr[], int size, int key, int pos){
 
 // ================== Linked List =================== //
 node* InsertBeg(node *head, int value){
-	node *temp = NULL;
-	temp = (node*)malloc(sizeof(node));
+	//node* temp = NULL;
+	//temp = (node*)malloc(sizeof(node));
+	node* temp { new node };
 	temp->value = value;
 	temp->next = head;
 	head = temp;
@@ -190,24 +191,27 @@ void InsertEnd(node *head, int value){
 	while(temp->next != NULL){
 		temp = temp->next;
 	}
-	node *endNode = NULL;
-	endNode = (node*)malloc(sizeof(node));
+	//node* endNode = NULL;
+	//endNode = (node*)malloc(sizeof(node));
+	node* endNode { new node };
 	endNode->value = value;
 	endNode->next = NULL;
 	temp->next = endNode;
 }
 
 node *InsertNth(node *head, int n, int value){
-	node *temp = NULL;
+	node* temp = NULL;
 	if(head == NULL){
-		temp = (node*)malloc(sizeof(node));
+		//temp = (node*)malloc(sizeof(node));
+		temp = new node;
 		temp->next = NULL;
 		temp->value = value;
 		head = temp;
 		return head;
 	}
 	temp = head;
-	node *newNode = (node*)malloc(sizeof(node));
+	//node *newNode = (node*)malloc(sizeof(node));
+	node* newNode { new node };
 	newNode->value = value;
 	if(n==1){
 		newNode->next = temp;
@@ -236,7 +240,8 @@ node *DeleteFirst(node *head){
 	}
 	node *temp = head;
 	head = temp->next;
-	free(temp);
+	//free(temp);
+	delete temp;
 	return head;
 }
 
@@ -253,7 +258,8 @@ void DeleteLast(node *head){
 	}
 	node *lastNode = temp->next;
 	temp->next = NULL;
-	free(lastNode);
+	//free(lastNode);
+	delete lastNode;
 }
 
 // list starts from 1 to n
@@ -287,7 +293,8 @@ node *DeleteNth(node *head, int n){
 	}
 	node *delNode = temp->next;
 	temp->next = delNode->next;
-	free(delNode);
+	//free(delNode);
+	delete delNode;
 	return head;
 }
 
