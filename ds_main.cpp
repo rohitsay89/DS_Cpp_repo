@@ -12,7 +12,7 @@ using namespace std;
 //#define ARRAY_DELETION
 //#define EXAMPLE_9_6
 //#define EXCHANGE_SELECTION_SORT
-//#define BUBBLE_SORT
+#define BUBBLE_SORT
 //#define INSERTION_SORT
 //#define MERGE_SORT
 //#define TWO_D_ARRAY
@@ -22,7 +22,7 @@ using namespace std;
 //#define STACK_LINKED_LIST
 //#define QUEUE_ARRAY
 //#define QUEUE_LINKED_LIST
-#define CIRCULAR_QUEUE_ARRAY
+//#define CIRCULAR_QUEUE_ARRAY
 
 #define ASCENDING	1
 
@@ -31,72 +31,74 @@ int main()
 	cout << "C++ version = " << __cplusplus << "\nCompilation Date is " << __DATE__ << "\nCompilation Time is " << __TIME__ << endl;
 
 #ifdef ARRAY_LINEAR_SEARCH
-		vLearnLinearSearchArray();
+	vLearnLinearSearchArray();
 #endif
 
 #ifdef ARRAY_BINARY_SEARCH
-		vLearnBinarySearchArray();
+	vLearnBinarySearchArray();
 #endif
 
 #ifdef ARRAY_INSERTION
-		vLearnArrayInsertion();
+	vLearnArrayInsertion();
 #endif
 
 #ifdef ARRAY_DELETION
-		vLearnArrayDeletion();
+	vLearnArrayDeletion();
 #endif
 
 #ifdef EXAMPLE_9_6
-		vEx_9_4();
+	vEx_9_4();
 #endif
 
 #ifdef EXCHANGE_SELECTION_SORT
-		vLearnExchangeSelectionSort();
+	vLearnExchangeSelectionSort();
 #endif
 
 #ifdef BUBBLE_SORT
-		vLearnBubbleSort();
+	vLearnBubbleSort();
 #endif
 
 #ifdef INSERTION_SORT
-		vLearnInsertionSort();
+	vLearnInsertionSort();
 #endif
 
 #ifdef MERGE_SORT
-		vLearnMergeSort();
+	vLearnMergeSort();
 #endif
 
 #ifdef TWO_D_ARRAY
-		vLearn2DArray();
+	vLearn2DArray();
 #endif
 
 #ifdef MATRIX_ARRAY
-		vLearnMatrix();
+	vLearnMatrix();
 #endif
 
 #ifdef LINKED_LIST
-		vLearnLinkedList();
+	vLearnLinkedList();
 #endif
 
 #ifdef STACK_ARRAY
-		vLearnStackArray();
+	vLearnStackArray();
 #endif
 
 #ifdef STACK_LINKED_LIST
-		vLearnStackLL();
+	vLearnStackLL();
 #endif
 
 #ifdef QUEUE_ARRAY
-		vLearnQueueArray();
+	vLearnQueueArray();
 #endif
 
 #ifdef QUEUE_LINKED_LIST
-		vLearnQueueLL();
+	vLearnQueueLL();
 #endif
 
 #ifdef CIRCULAR_QUEUE_ARRAY
-		vLearnCircularQueue();
+	vLearnCircularQueue();
 #endif
+
+	cout << "\n\nProgram execution ended\n\n";
 	return 0;
 }
 
@@ -221,9 +223,18 @@ void vLearnBubbleSort()
 			if(arr[i] > arr[i+1])
 			{
 				comaprison_result = 1;
+				// swapping using third variable
+#if 0
 				temp = arr[i+1];
 				arr[i+1] = arr[i];
 				arr[i] = temp;
+#endif
+#if 1
+				// swapping WITHOUT using 3rd variable
+				arr[i] = arr[i] + arr[i+1];
+				arr[i+1] = arr[i] - arr[i+1];
+				arr[i] = arr[i] - arr[i+1];
+#endif
 			}
 		}
 	}
