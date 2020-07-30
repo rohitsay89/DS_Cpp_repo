@@ -18,7 +18,8 @@ using namespace std;
 //#define TWO_D_ARRAY
 //#define MATRIX_ARRAY
 //#define LINKED_LIST
-#define COMPARE_LINKED_LIST
+//#define COMPARE_LINKED_LIST
+#define DOUBLY_LINKED_LIST
 //#define STACK_ARRAY
 //#define STACK_LINKED_LIST
 //#define QUEUE_ARRAY
@@ -81,6 +82,9 @@ int main()
 
 #ifdef COMPARE_LINKED_LIST
 	vLearnComapreLL();
+#endif
+#ifdef DOUBLY_LINKED_LIST
+	vLearnDoublyLinkedList();
 #endif
 
 #ifdef STACK_ARRAY
@@ -465,7 +469,7 @@ void vLearnLinkedList(){
 }
 
 void vLearnComapreLL(){
-	printf("Compare 2 linked lists\n");
+	std::cout << "Compare 2 linked lists\n";
 	node *HEADA = NULL;
 	node *HEADB = NULL;
 
@@ -487,6 +491,29 @@ void vLearnComapreLL(){
 	printList(HEADB);
 
 	cout << "Compare = " << compare_2LL(HEADA, HEADB) << endl;
+
+}
+
+void vLearnDoublyLinkedList(){
+	std::cout << "Doubly linked lists demo\n";
+
+	doublyLL_node *HEAD = NULL;
+	int n = -1;
+	int val = -1;
+	//HEAD = InsertNthDoublyLL(HEAD, 5, 5);
+	HEAD = InsertBegDoublyLL(HEAD, 5);
+	InsertEndDoublyLL(HEAD, 56);
+	InsertEndDoublyLL(HEAD, 57);
+	InsertEndDoublyLL(HEAD, 58);
+	InsertEndDoublyLL(HEAD, 59);
+	printListDoublyLL(HEAD);
+	printReverseListDoublyLL(HEAD);
+	/*std::cout << "Enter nth node to insert:";
+	std::cin >> n;
+	std::cout << "Enter nth node value:";
+	std::cin >> val;
+	HEAD = InsertNthDoublyLL(HEAD, n, val);
+	printListDoublyLL(HEAD);*/
 
 }
 

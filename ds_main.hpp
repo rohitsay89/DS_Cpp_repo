@@ -24,6 +24,7 @@ void vLearn2DArray();
 void vLearnMatrix();
 void vLearnLinkedList();
 void vLearnComapreLL();
+void vLearnDoublyLinkedList();
 void vLearnStackArray();
 void vLearnStackLL();
 void vLearnQueueArray();
@@ -40,11 +41,21 @@ bool utCircularQueue();
 	ARRAY_LINEAR_SEARCH,
 	ARRAY_BINARY_SEARCH
 };*/
+
+// single linked list
 typedef struct node
 {
 	int value;
 	node *next;
 }node;
+
+typedef struct doublyLL_node
+{
+	int value;
+	doublyLL_node* next;
+	doublyLL_node* prev;
+
+}doublyLL_node;
 
 // helper functions
 int BsearchAscending(int arr[], int size, int item);
@@ -56,6 +67,7 @@ int delete_item(int arr[], int size, int item);
 int SelectionSort(int arr[], int size);
 int insertArray(int arr[], int size, int key, int pos);
 
+// single linked list
 node* InsertBeg(node *, int);
 void InsertEnd(node *, int);
 node *InsertNth(node *head, int n, int value);
@@ -65,6 +77,18 @@ node *DeleteNth(node *head, int n);
 node *DeleteNthFromLast(node *head, int n);
 int compare_2LL(node* headA, node* headB);
 void printList(node *);
+
+// doubly linked list
+doublyLL_node* InsertBegDoublyLL(doublyLL_node* head, int value);
+void InsertEndDoublyLL(doublyLL_node *head, int value);
+doublyLL_node *InsertNthDoublyLL(doublyLL_node* head, int n, int value);
+doublyLL_node *DeleteFirstDoublyLL(doublyLL_node* head);
+void DeleteLastDoublyLL(doublyLL_node* head);
+doublyLL_node *DeleteNthDoublyLL(doublyLL_node *head, int n);
+doublyLL_node *DeleteNthFromLastDoublyLL(doublyLL_node *head, int n);
+void printListDoublyLL(doublyLL_node *head);
+void printReverseListDoublyLL(doublyLL_node *head);
+
 
 void printStackArray(int arr[], int *top);
 void pushStackArray(int arr[], int *top, int value);

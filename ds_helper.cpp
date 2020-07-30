@@ -379,22 +379,209 @@ void printList(node *head)
 
 // ===================================================//
 
+// ================== Doubly Linked List =================== //
+
+//doublyLL_node
+doublyLL_node* InsertBegDoublyLL(doublyLL_node* head, int value){
+	doublyLL_node* temp { new doublyLL_node };
+	temp->value = value;
+	temp->next = head;
+	temp->prev = NULL;
+	head = temp;
+	return head;
+}
+
+void InsertEndDoublyLL(doublyLL_node* head, int value){
+	doublyLL_node* temp = NULL;
+	temp = head;
+	while(temp->next != NULL){
+		temp = temp->next;
+	}
+	doublyLL_node* endNode { new doublyLL_node };
+	endNode->value = value;
+	endNode->next = NULL;
+	endNode->prev = temp;
+	temp->next = endNode;
+}
+
+doublyLL_node *InsertNthDoublyLL(doublyLL_node* head, int n, int value){
+	doublyLL_node* temp = NULL;
+	if(head == NULL){
+		temp = new doublyLL_node;
+		temp->next = NULL;
+		temp->prev = NULL;
+		temp->value = value;
+		head = temp;
+		return head;
+	}
+	temp = head;
+	doublyLL_node* newNode { new doublyLL_node };
+	newNode->value = value;
+	if(n==1){
+		newNode->next = temp;
+		newNode->prev = NULL;
+		head = newNode;
+		return head;
+	}
+
+	int i = 1;
+	for(i=1;i<n-1;i++){
+		if(temp->next == NULL){
+			std::cout << "Enter valid position number\n";
+			delete newNode;
+			return head;
+		}
+		temp=temp->next;
+	}
+	newNode->next = temp->next;
+	temp->next = newNode;
+	newNode->prev = temp;
+	return head;
+}
+
+doublyLL_node *DeleteFirstDoublyLL(doublyLL_node* head){
+	if(head == NULL)
+	{
+		std::cout << "List is empty, nothing to delete\n";
+	}
+	doublyLL_node* temp = head;
+	head = temp->next;
+	delete temp;
+
+	// rearrange link for the next node
+	doublyLL_node* nextNode = head;
+	nextNode->prev = NULL;
+
+	return head;
+}
+
+void DeleteLastDoublyLL(doublyLL_node* head){
+	if(head == NULL)
+	{
+		std::cout << "List is empty, nothing to delete\n";
+		return;
+	}
+	doublyLL_node* temp = head;
+	while(temp->next->next != NULL)
+	{
+		temp = temp->next;
+	}
+	doublyLL_node* lastNode = temp->next;
+	temp->next = NULL;
+	delete lastNode;
+}
+
+// list starts from 1 to n
+doublyLL_node *DeleteNthDoublyLL(doublyLL_node *head, int n){
+	if(head == NULL){
+		std::cout << "List is empty, nothing to delete\n";
+		return NULL;
+	}
+	if(n==1){
+		head = DeleteFirstDoublyLL(head);
+		return head;
+	}
+	if(n<0){
+		std::cout << "Invalid node number\n";
+		return head;
+	}
+	doublyLL_node *temp = head;
+	int i;
+	for(i=1;i<n-1;i++){
+		if(temp->next == NULL){
+			std::cout << "node number out of range, please enter a valid node number\n";
+			return head;
+		}
+		temp = temp->next;
+	}
+
+	if(temp->next == NULL)
+	{
+		std::cout << "node number out of range, please enter a valid node number\n";
+		return head;
+	}
+	doublyLL_node *delNode = temp->next;
+	doublyLL_node *nextToDelNode = delNode->next;
+	temp->next = delNode->next;
+	nextToDelNode->prev = temp;
+	delete delNode;
+	return head;
+}
+
+// list starts from 1 to n
+doublyLL_node *DeleteNthFromLastDoublyLL(doublyLL_node *head, int n){
+	doublyLL_node *temp;
+	if(head == NULL){
+		std::cout << "List is empty, nothing to delete\n";
+		return NULL;
+	}
+	if(n<0){
+		std::cout << "Invalid node number\n";
+		return head;
+	}
+	// 1st pass to count the items in the list
+	temp = head;
+	int count = 1;
+	while(temp->next != NULL){
+		temp = temp->next;
+		count++;
+	}
+	int index = (count-n)+1;
+	//printf("Count = %d, index = %d\n", count, index);
+	return DeleteNthDoublyLL(head, index);
+}
+
+void printListDoublyLL(doublyLL_node *head){
+	if(head == NULL){
+		//printf("List is empty\n");
+		std::cout << "List is empty\n";
+		return;
+	}
+	doublyLL_node *temp = head;
+	while(temp!=NULL){
+		//printf("%d -> ", temp->value);
+		std::cout << temp->value << " -> ";
+		temp = temp->next;
+	}
+	std::cout << "NULL\n";
+}
+
+void printReverseListDoublyLL(doublyLL_node *head){
+	if(head == NULL){
+		std::cout << "List is empty\n";
+		return;
+	}
+	doublyLL_node *temp = head;
+	while(temp->next != NULL){
+		//std::cout << temp->value << " -> ";
+		temp = temp->next;
+	}
+
+	while(temp != NULL){
+		std::cout << temp->value << " -> ";
+		temp = temp->prev;
+	}
+
+	std::cout << "NULL\n";
+}
+
+// ==========================================================//
+
 // ================== Stack Array =================== //
 
 void printStackArray(int arr[], int *top){
 	int localTop = *top;
 	if(localTop < 0){
-		printf("Stack is empty\n");
+		std::cout << "Stack is empty\n";
 		return;
 	}
-	printf("\n");
-	printf("%d <--- top\n", arr[localTop]);
+	std::cout << "\n" << arr[localTop] << " <--- top\n";
 	localTop--;
 	while(localTop >= 0){
-		printf("%d\n", arr[localTop]);
+		std::cout << arr[localTop] << std::endl;
 		localTop--;
 	}
-	printf("\n");
+	std::cout << '\n';
 }
 
 void pushStackArray(int arr[], int *top, int value){
