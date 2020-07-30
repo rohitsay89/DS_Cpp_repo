@@ -10,7 +10,7 @@ Windows(with MinGW make.exe utility):
 3. type and run: 'make all'
 4. after compilation is complete type 'DS_Cpp_repo.exe' and hit enter to run the code
 
-Linux ():
+Linux (gcc/g++ version 9.3+):
 1. Open terminal
 2. navigate to the cloned/downloaded folder
 3. then further navigate to 'Debug' folder
