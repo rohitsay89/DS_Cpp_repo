@@ -321,18 +321,60 @@ node *DeleteNthFromLast(node *head, int n){
 	return DeleteNth(head, index);
 }
 
+/* function to compare two linked list and output 1 or 0 */
+int compare_2LL(node* headA, node* headB){
+	node *temp1, *temp2;
+
+	temp1 = headA;
+	temp2 = headB;
+	int count_data = 0;
+	int count_nodeA = 0;
+	int count_nodeB = 0;
+	if((headA==NULL)&&(headB==NULL)){				/* Check if both of the lists are empty */
+		return 1;									/* If yes then return 1 */
+    	}
+	while((temp1!=NULL)&&(temp2!=NULL)){    		/* Traverse through both the lists and compare data */
+		if((temp1->value)!=(temp2->value)){			/* If data is not same */
+			count_data++;							/* increment count */
+			if(count_data>0){						/* Check if count is more than 0 */
+				return 0;							/* If yes then retrun 0 to main function i.e. list is not idnetical*/
+			}
+		}
+		temp1=temp1->next;							/* go to next node for list 1 */
+		temp2=temp2->next;							/* go to next node for list 2 */
+	}
+	temp1 = headA;
+	temp2 = headB;
+    	while((temp1!=NULL)){						/* Check for lenght of linked lists */
+        	count_nodeA++;							/* count the length */
+		temp1 = temp1->next;
+	}
+	while((temp2!=NULL)){
+		count_nodeB++;								/* Check for lenght of linked lists */
+		temp2 = temp2->next;						/* count the length */
+    	}
+    	if((count_nodeA == count_nodeB)&&(count_data==0)){	/* if length and data is equal then return 1 */
+        	return 1;
+    	}
+    	else{										/* Else return 0 */
+        	return 0;
+    	}
+}
+
 void printList(node *head)
 {
 	if(head == NULL){
-		printf("List is empty\n");
+		//printf("List is empty\n");
+		cout << "List is empty\n";
 		return;
 	}
 	node *temp = head;
 	while(temp!=NULL){
-		printf("%d -> ", temp->value);
+		//printf("%d -> ", temp->value);
+		cout << temp->value << " -> ";
 		temp = temp->next;
 	}
-	printf("NULL\n");
+	cout << "NULL\n";
 }
 
 // ===================================================//

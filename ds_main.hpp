@@ -23,6 +23,7 @@ void vLearnMergeSort();
 void vLearn2DArray();
 void vLearnMatrix();
 void vLearnLinkedList();
+void vLearnComapreLL();
 void vLearnStackArray();
 void vLearnStackLL();
 void vLearnQueueArray();
@@ -43,7 +44,7 @@ typedef struct node
 {
 	int value;
 	node *next;
-};
+}node;
 
 // helper functions
 int BsearchAscending(int arr[], int size, int item);
@@ -62,6 +63,7 @@ node *DeleteFirst(node *head);
 void DeleteLast(node *head);
 node *DeleteNth(node *head, int n);
 node *DeleteNthFromLast(node *head, int n);
+int compare_2LL(node* headA, node* headB);
 void printList(node *);
 
 void printStackArray(int arr[], int *top);

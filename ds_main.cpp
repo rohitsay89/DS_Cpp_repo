@@ -17,7 +17,8 @@ using namespace std;
 //#define MERGE_SORT
 //#define TWO_D_ARRAY
 //#define MATRIX_ARRAY
-#define LINKED_LIST
+//#define LINKED_LIST
+#define COMPARE_LINKED_LIST
 //#define STACK_ARRAY
 //#define STACK_LINKED_LIST
 //#define QUEUE_ARRAY
@@ -76,6 +77,10 @@ int main()
 
 #ifdef LINKED_LIST
 	vLearnLinkedList();
+#endif
+
+#ifdef COMPARE_LINKED_LIST
+	vLearnComapreLL();
 #endif
 
 #ifdef STACK_ARRAY
@@ -457,6 +462,32 @@ void vLearnLinkedList(){
 	//HEAD = DeleteNth(HEAD, n);
 	//HEAD = DeleteNthFromLast(HEAD, n);
 	//printList(HEAD);
+}
+
+void vLearnComapreLL(){
+	printf("Compare 2 linked lists\n");
+	node *HEADA = NULL;
+	node *HEADB = NULL;
+
+	//HEAD = InsertNth(HEAD, 5, 5);
+	HEADA = InsertBeg(HEADA, 5);
+	InsertEnd(HEADA, 56);
+	InsertEnd(HEADA, 57);
+	InsertEnd(HEADA, 58);
+	InsertEnd(HEADA, 59);
+	cout << "List A = ";
+	printList(HEADA);
+
+	HEADB = InsertBeg(HEADB, 5);
+	InsertEnd(HEADB, 56);
+	InsertEnd(HEADB, 57);
+	InsertEnd(HEADB, 58);
+	InsertEnd(HEADB, 59);
+	cout << "List A = ";
+	printList(HEADB);
+
+	cout << "Compare = " << compare_2LL(HEADA, HEADB) << endl;
+
 }
 
 //STACK(LIFO) last in first out implementation using array
