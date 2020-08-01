@@ -363,18 +363,35 @@ int compare_2LL(node* headA, node* headB){
 
 void printList(node *head)
 {
+#if 0
 	if(head == NULL){
-		//printf("List is empty\n");
 		cout << "List is empty\n";
 		return;
 	}
 	node *temp = head;
 	while(temp!=NULL){
-		//printf("%d -> ", temp->value);
 		cout << temp->value << " -> ";
 		temp = temp->next;
 	}
 	cout << "NULL\n";
+#endif
+	// with recursion:
+	if(head == NULL){
+		std::cout << "NULL\n";
+		return;
+	}
+	std::cout << head->value << " -> ";
+	printList(head->next);
+}
+
+void printListReverse(node *p){
+	if(p == NULL){
+		//cout << "List is empty\n";
+		std::cout << "NULL -> ";
+		return;
+	}
+	printListReverse(p->next);
+	std::cout << p->value << " -> ";
 }
 
 // ===================================================//

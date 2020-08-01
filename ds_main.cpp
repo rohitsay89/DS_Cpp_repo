@@ -17,9 +17,9 @@ using namespace std;
 //#define MERGE_SORT
 //#define TWO_D_ARRAY
 //#define MATRIX_ARRAY
-//#define LINKED_LIST
+#define LINKED_LIST
 //#define COMPARE_LINKED_LIST
-#define DOUBLY_LINKED_LIST
+//#define DOUBLY_LINKED_LIST
 //#define STACK_ARRAY
 //#define STACK_LINKED_LIST
 //#define QUEUE_ARRAY
@@ -454,12 +454,14 @@ void vLearnLinkedList(){
 	InsertEnd(HEAD, 58);
 	InsertEnd(HEAD, 59);
 	printList(HEAD);
-	printf("Enter nth node to insert:");
+	std::cout << '\n';
+	printListReverse(HEAD);
+	std::cout << '\n';
+	/*printf("Enter nth node to insert:");
 	scanf("%d", &n);
 	printf("Enter nth node value:");
 	scanf("%d", &val);
-	HEAD = InsertNth(HEAD, n, val);
-	printList(HEAD);
+	HEAD = InsertNth(HEAD, n, val);*/
 	//printf("Enter nth node to delete:");
 	//printf("Enter nth node from last to delete:");
 	//scanf("%d", &n);
