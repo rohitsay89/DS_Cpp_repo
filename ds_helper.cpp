@@ -394,6 +394,21 @@ void printListReverse(node *p){
 	std::cout << p->value << " -> ";
 }
 
+node* reverseLL(node *head){
+	node *prev, *current, *next;
+	current = head;
+	prev = NULL;
+	while(current != NULL){
+		//std::cout << "Current->value = " << current->value << std::endl;
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	head = prev;
+	return head;
+}
+
 // ===================================================//
 
 // ================== Doubly Linked List =================== //

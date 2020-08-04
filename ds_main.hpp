@@ -78,6 +78,7 @@ node *DeleteNthFromLast(node *head, int n);
 int compare_2LL(node* headA, node* headB);
 void printList(node *);
 void printListReverse(node *p);
+node* reverseLL(node *head);
 
 // doubly linked list
 doublyLL_node* InsertBegDoublyLL(doublyLL_node* head, int value);

@@ -445,8 +445,8 @@ void vLearnMatrix()
 void vLearnLinkedList(){
 	printf("This is linked list code here\n");
 	node *HEAD = NULL;
-	int n = -1;
-	int val = -1;
+	//int n = -1;
+	//int val = -1;
 	//HEAD = InsertNth(HEAD, 5, 5);
 	HEAD = InsertBeg(HEAD, 5);
 	InsertEnd(HEAD, 56);
@@ -455,8 +455,11 @@ void vLearnLinkedList(){
 	InsertEnd(HEAD, 59);
 	printList(HEAD);
 	std::cout << '\n';
-	printListReverse(HEAD);
+	HEAD = reverseLL(HEAD);
+	printList(HEAD);
 	std::cout << '\n';
+	//printListReverse(HEAD);
+	//std::cout << '\n';
 	/*printf("Enter nth node to insert:");
 	scanf("%d", &n);
 	printf("Enter nth node value:");
