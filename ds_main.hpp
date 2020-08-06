@@ -80,6 +80,17 @@ void printList(node *);
 void printListReverse(node *p);
 node* reverseLL(node *head);
 
+class nodeClass{
+public:
+	int value;
+	nodeClass* next;
+};
+nodeClass* InsertBegClass(nodeClass* head , int v);
+void InsertEndClass(nodeClass* , int);
+void printLLClass(nodeClass* head);
+
+
+
 // doubly linked list
 doublyLL_node* InsertBegDoublyLL(doublyLL_node* head, int value);
 void InsertEndDoublyLL(doublyLL_node *head, int value);

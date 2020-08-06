@@ -443,6 +443,8 @@ void vLearnMatrix()
 }
 
 void vLearnLinkedList(){
+
+#if 0
 	printf("This is linked list code here\n");
 	node *HEAD = NULL;
 	//int n = -1;
@@ -471,7 +473,24 @@ void vLearnLinkedList(){
 	//HEAD = DeleteNth(HEAD, n);
 	//HEAD = DeleteNthFromLast(HEAD, n);
 	//printList(HEAD);
+#endif
+
+#if 1
+	/* Linked list implementation using classes and objects */
+	std::cout << "This is Linked list implementation using classes\n";
+	nodeClass* Head = NULL;
+	Head = InsertBegClass(Head, 64);
+	InsertEndClass(Head, 65);
+	InsertEndClass(Head, 66);
+	InsertEndClass(Head, 67);
+	InsertEndClass(Head, 68);
+	InsertEndClass(Head, 69);
+	InsertEndClass(Head, 70);
+	printLLClass(Head);
+#endif
+
 }
+
 
 void vLearnComapreLL(){
 	std::cout << "Compare 2 linked lists\n";

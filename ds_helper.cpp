@@ -409,6 +409,46 @@ node* reverseLL(node *head){
 	return head;
 }
 
+
+/* Linked list using class */
+nodeClass* InsertBegClass(nodeClass* head , int v)
+{
+	nodeClass *Node = new nodeClass;
+	Node->value = v;
+	Node->next = head;
+	head = Node;
+	return head;
+}
+
+void InsertEndClass(nodeClass* head , int v)
+{
+	if(head == NULL){
+		nodeClass *Node = new nodeClass;
+		Node->value = v;
+		Node->next = NULL;
+		head = Node;
+	}
+	else{
+		nodeClass *temp = head;
+		while(temp->next != NULL){
+			temp = temp->next;
+		}
+		nodeClass *Node = new nodeClass;
+		temp->next = Node;
+		Node->value = v;
+		Node->next = NULL;
+	}
+}
+
+void printLLClass(nodeClass* head){
+	nodeClass* temp = head;
+	while(temp != NULL){
+		std::cout << temp->value << " -> ";
+		temp = temp->next;
+	}
+	std::cout << "NULL" << endl;
+}
+
 // ===================================================//
 
 // ================== Doubly Linked List =================== //
