@@ -364,8 +364,9 @@ void vLearn2DArray()
 
 	for(i=0; i<row; i++){
 		for(j=0; j<col; j++){
-			printf("%d ", arr[i][j]);
+			printf("val = %d add = %X\t", arr[i][j], &arr[i][j]);
 		}
+		printf("\n");
 	}
 	cout << endl;
 
@@ -410,8 +411,9 @@ void vLearnMatrix()
 	}
 #endif
 
-#if 1
+#if 0
 	// multiplication of matrices
+	std::cout << "Multiplication of matrices" << endl;
 	int i = 0, j = 0, ip = 0;
 	int row = 2, col = 2;
 	int m1[2][3] = {1,2,3, 4,5,6};
@@ -439,10 +441,164 @@ void vLearnMatrix()
 
 #endif
 
+#if 0
+	// transposition of matrices
+	std::cout << "transposition of a matrix" << endl;
+	int m1[2][3] = {1,2,3, 4,5,6};
+	int m2[2][2];
+	int i = 0, j = 0, ip = 0;
+	int row = 2, col = 3;
+
+	// print m1
+	for(i=0; i<row; i++){
+		for(j=0; j<col; j++){
+			printf("%02d ", m1[i][j]);
+		}
+		printf("\n");
+	}
+
+	for(i=0; i<row; i++){
+		for(j=0; j<col; j++){
+			m2[j][i] = m1[i][j];
+			//printf("%02d ", m2[i][j]);
+		}
+		printf("\n");
+	}
+
+	// print m2
+	for(i=0; i<col; i++){
+		for(j=0; j<row; j++){
+			printf("%02d ", m2[i][j]);
+		}
+		printf("\n");
+	}
+
+#endif
+
+#if 0
+	// determinant of a 2x2 square matrix
+	std::cout << "Determinant of 2x2 matrix" << endl;
+	int m1[2][2] = {1,2, 4,5};
+	int i = 0, j = 0;
+	int row = 2, col = 2;
+	// print m1
+	for(i=0; i<row; i++){
+		for(j=0; j<col; j++){
+			printf("%02d ", m1[i][j]);
+		}
+		printf("\n");
+	}
+
+	int determinant = 0;
+	determinant = (m1[0][0] * m1[1][1]) - (m1[0][1] * m1[1][0]);
+	std::cout << determinant << endl;
+#endif
+
+#if 0
+	// determinant of a 3x3 matrix=
+	std::cout << "Determinant of 3x3 matrix" << endl;
+	int m1[3][3] = {1,2,17, 4,5,18, 7,8,19};
+	int i = 0, j = 0;
+	int row = 3, col = 3;
+	// print m1
+	for(i=0; i<row; i++){
+		for(j=0; j<col; j++){
+			printf("%02d ", m1[i][j]);
+		}
+		printf("\n");
+	}
+
+	int determinant = 0;
+	i = 0; j = 0;
+	for(j=0; j<3 ; j++){
+		determinant = determinant + (m1[0][j]*( (m1[1][(j+1)%3]*m1[2][(j+2)%3]) - (m1[2][(j+1)%3]*m1[1][(j+2)%3]) ));
+	}
+	std::cout << determinant << endl;
+
+#endif
+	std::cout << " 0%3 = " << 0%3
+			<< " 1%3 = " << 1%3
+			<< " 2%3 = " << 2%3
+			<< " 3%3 = " << 3%3
+			<< endl;
+
+#if 1
+	// Sparse matrix
+	int count = 0;
+	int sparseMatrix[4][5] =
+	{
+			{0,0,3,0,4},
+			{0,0,5,7,0},
+			{0,0,0,0,0},
+			{0,2,6,0,0}
+	};
+
+	// now calculate count of non zero elements in the sparse matrix:
+	int i=0, j=0;
+	for(i=0;i<4;++i){
+		for(j=0;j<5;++j){
+			//printf("sparseMatrix[%d][%d] = %d", i,j, sparseMatrix[i][j]);
+			std::cout <<"  " <<sparseMatrix[i][j];
+			if(sparseMatrix[i][j] != 0){
+				count++;
+			}
+		}
+		//printf("\n");
+		std::cout << endl;
+	}
+	//printf("\n");
+	std::cout << endl;
+	int compactMatrix[3][count];
+	int k =0;
+
+	for(i=0;i<4;++i){
+		for(j=0;j<5;++j){
+			if(sparseMatrix[i][j] != 0){
+				compactMatrix[0][k] = i;
+				compactMatrix[1][k] = j;
+				compactMatrix[2][k] = sparseMatrix[i][j];
+				k++;
+			}
+		}
+	}
+
+	for(i=0;i<3;++i){
+		for(j=0;j<count;++j){
+			//printf("compactMatrix[%d][%d] = %d", i, j, compactMatrix[i][j]);
+			//printf("%d  ", compactMatrix[i][j]);
+			std::cout << "  " << compactMatrix[i][j];
+		}
+		std::cout << endl;
+	}
+
+
+#endif
 
 }
 
 void vLearnLinkedList(){
+
+#if 1
+	std::cout << "Operations on ordered list" << endl;
+	// ordered list operations:
+	// 1. adding new element to ordered list
+	// 2. deleting an existing element from ordered list
+	node *HEAD = NULL;
+	HEAD = InsertBeg(HEAD, 55);
+	InsertEnd(HEAD, 56);
+	InsertEnd(HEAD, 57);
+	//InsertEnd(HEAD, 58);
+	InsertEnd(HEAD, 59);
+	InsertEnd(HEAD, 60);
+	printList(HEAD);
+	HEAD = InsertOrd(HEAD, 4);
+	printList(HEAD);
+	HEAD = InsertOrd(HEAD, 600);
+	printList(HEAD);
+	HEAD = DeleteFromList(HEAD, 570);
+	printList(HEAD);
+
+#endif
 
 #if 0
 	printf("This is linked list code here\n");
@@ -475,7 +631,7 @@ void vLearnLinkedList(){
 	//printList(HEAD);
 #endif
 
-#if 1
+#if 0
 	/* Linked list implementation using classes and objects */
 	std::cout << "This is Linked list implementation using classes\n";
 	nodeClass* Head = NULL;
@@ -490,7 +646,6 @@ void vLearnLinkedList(){
 #endif
 
 }
-
 
 void vLearnComapreLL(){
 	std::cout << "Compare 2 linked lists\n";

@@ -68,17 +68,19 @@ int SelectionSort(int arr[], int size);
 int insertArray(int arr[], int size, int key, int pos);
 
 // single linked list
-node* InsertBeg(node *, int);
+node *InsertBeg(node *, int);
 void InsertEnd(node *, int);
 node *InsertNth(node *head, int n, int value);
+node *InsertOrd(node *head, int value);
 node *DeleteFirst(node *head);
 void DeleteLast(node *head);
 node *DeleteNth(node *head, int n);
 node *DeleteNthFromLast(node *head, int n);
+node *DeleteFromList(node *head, int value);
 int compare_2LL(node* headA, node* headB);
 void printList(node *);
 void printListReverse(node *p);
-node* reverseLL(node *head);
+node *reverseLL(node *head);
 
 class nodeClass{
 public:
@@ -123,4 +125,5 @@ void printQueueLL(node **FRONT);
 void insertCQueue(int arr[], int *front, int *rear, int value);
 int deleteCQueue(int arr[], int *front, int *rear);
 void printCQueue(int arr[], int *front, int *rear);
+
 #endif /* DS_MAIN_HPP_ */

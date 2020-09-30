@@ -6,7 +6,9 @@
  */
 
 #include <iostream>
+//#include <stdint.h>
 #include "ds_main.hpp"
+
 using namespace std;
 
 int Lsearch(int arr[], int size, int item){
@@ -233,6 +235,41 @@ node *InsertNth(node *head, int n, int value){
 	return head;
 }
 
+node* InsertOrd(node *head, int value)
+{
+	node* temp = NULL;
+	temp = head;
+	// check if the new value is smaller than first node
+	// if yes then add that value to the begining of list
+	if(temp->value > value){
+		return InsertBeg(head, value);
+	}
+
+	// traverse the list till end
+	// if new value is more than any node then add new value before that ndoe
+	while((temp->next != NULL))
+	{
+		if(temp->next->value > value){
+			node* endNode { new node };
+			endNode->value = value;
+			endNode->next = temp->next;
+			temp->next = endNode;
+			return head;
+		}
+		// if not then just keep going on till end of list
+		else{
+			temp = temp->next;
+		}
+	}
+	// if no greater value is found in the existing list then add the
+	// new value to end of list
+	node* endNode { new node };
+	endNode->value = value;
+	endNode->next = temp->next;
+	temp->next = endNode;
+	return head;
+}
+
 node *DeleteFirst(node *head){
 	if(head == NULL)
 	{
@@ -319,6 +356,34 @@ node *DeleteNthFromLast(node *head, int n){
 	int index = (count-n)+1;
 	//printf("Count = %d, index = %d\n", count, index);
 	return DeleteNth(head, index);
+}
+
+// this function looks for a value in the list if present then deletes from
+// the list
+node *DeleteFromList(node *head, int value)
+{
+	node *temp = head;
+	// if the value is found at first element then just delete the first node
+	// adjust the link and return new head;
+	if(temp->value == value){
+		return DeleteFirst(temp);
+	}
+
+	// linear search in the list for value
+	while(temp->next != NULL)
+	{
+		// look for value at each node, if found then delete that node and
+		// adjust the links and return head of the list.
+		if(temp->next->value == value){
+			node *valNode = temp->next;
+			temp->next = valNode->next;
+			delete valNode;
+			return head;
+		}
+		temp=temp->next;
+	}
+	std::cout << "Desired value of "<< value << " not found in the list" << endl;
+	return head;
 }
 
 /* function to compare two linked list and output 1 or 0 */
@@ -900,5 +965,9 @@ void printCQueue(int arr[], int *front, int *rear){
 	printf("%d \n", arr[i]);
 	printf("\n");
 }
+
+// ===================================================//
+// ==================== MATRIX ====================== //
+
 
 // ===================================================//
