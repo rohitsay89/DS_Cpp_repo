@@ -17,14 +17,14 @@ using namespace std;
 //#define MERGE_SORT
 //#define TWO_D_ARRAY
 //#define MATRIX_ARRAY
-#define LINKED_LIST
+//#define LINKED_LIST
 //#define COMPARE_LINKED_LIST
 //#define DOUBLY_LINKED_LIST
 //#define STACK_ARRAY
 //#define STACK_LINKED_LIST
 //#define QUEUE_ARRAY
 //#define QUEUE_LINKED_LIST
-//#define CIRCULAR_QUEUE_ARRAY
+#define CIRCULAR_QUEUE_ARRAY
 
 #define ASCENDING	1
 
@@ -803,7 +803,8 @@ void vLearnCircularQueue(){
 	printf("This is circular queue implementation using array\n");
 	utCircularQueue();
 
-	/*printCQueue(CQueue, &front, &rear);
+#if 0
+	printCQueue(CQueue, &front, &rear);
 	for(int i = 1;i<20;i++){
 		insertCQueue(CQueue, &front, &rear, i);
 	}
@@ -833,5 +834,5 @@ void vLearnCircularQueue(){
 		printf("value = %d\n", deleteCQueue(CQueue, &front, &rear));
 	}
 	printCQueue(CQueue, &front, &rear);
-	*/
+#endif
 }

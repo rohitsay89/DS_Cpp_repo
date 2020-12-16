@@ -928,18 +928,18 @@ void insertCQueue(int arr[], int *front, int *rear, int value){
 
 int deleteCQueue(int arr[], int *front, int *rear){
 	//printf("Front = %d, Rear = %d\n", *front, *rear);
-	int value = 0;
 	if(*front == -1){
 		printf("Queue is empty, ");
 		return -1;
 	}
+	int value = 0;
 	value = arr[*front];
 	if(*front == *rear){
 		*rear = -1;
 		*front = -1;
 		return value;
 	}
-	value = arr[*front];
+
 	(*front)++;
 	(*front) = (*front) % QUEUE_SIZE;
 	return value;
